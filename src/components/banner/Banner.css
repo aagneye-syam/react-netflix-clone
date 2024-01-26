@@ -1,7 +1,30 @@
-.banner{
-        background-image: url('https://tongal.s3.amazonaws.com/custom-files/2021/03/01/Dark_editing_netflix_blogbanner.png');
-        background-size: cover;
-        height: 500px;
-        color : white;
-        
+.banner {
+  background-image: url("https://tongal.s3.amazonaws.com/custom-files/2021/03/01/Dark_editing_netflix_blogbanner.png");
+  background-size: cover;
+  height: 500px;
+  color: white;
+}
+
+.content {
+  padding-top: 140px;
+  height: 190px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+
+.button{
+        color:white;
+        outline:none ;
+        border:none;
+        font-weight: 700;
+        border-radius: 5px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.5;
+        padding-bottom: 0.5rem;
+        background-color: rgba(51, 51, 51, 0.5);
 }
