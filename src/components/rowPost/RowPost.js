@@ -3,7 +3,7 @@ import "./RowPost.css";
 import axios from "../../axios";
 import { API_KEY,imageUrl } from "../../constants/Constants";
 
-function RowPost() {
+function RowPost(props) {
   const [movies, setMovie] = useState([]);
   useEffect(() => {
     axios.get(`discover/tv?api_key=${API_KEY}&with_networks=213`).then((response) => {
@@ -17,11 +17,11 @@ function RowPost() {
 
   return (
     <div className="row">
-      <h2>Netflix Originals</h2>
+      <h2>{props.title}</h2>
       <div className="posters">
         {
           movies.map((obj)=>
-          <img className="poster" alt="Poster" src={`${imageUrl+obj.backdrop_path}`}  />
+          <img className={props.isSmall ? "small_poster" : "poster"} alt="Poster" src={`${imageUrl+obj.backdrop_path}`}  />
 
           )
         }
