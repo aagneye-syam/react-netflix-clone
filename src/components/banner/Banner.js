@@ -23,10 +23,7 @@ function Banner() {
           <button className="button">Play</button>
           <button className="button">My list</button>
         </div>
-        <h1 className="description">
-          In publishing and graphic design, Lorem ipsum is a placeholder text
-          commonly used to demonstrate the visual form of a document
-        </h1>
+        <h1 className="description">{movie ? movie.overview:""}</h1>
       </div>
       <div className="fade_bottom"></div>
     </div>
