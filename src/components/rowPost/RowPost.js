@@ -46,7 +46,7 @@ function RowPost(props) {
               onClick={() => handleMoveTrailer(obj.id)} className={props.isSmall ? "small_poster" : "poster"} alt="Poster" src={`${imageUrl + obj.backdrop_path}`} />
           ))}
         </div>
-        { <YouTube opts={opts} videoId={urlId.key} />}
+        { urlId && <YouTube opts={opts} videoId={urlId.key} />}
       </div>
     );
   };
