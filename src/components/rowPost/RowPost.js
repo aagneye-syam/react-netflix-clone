@@ -6,7 +6,7 @@ import YouTube from "react-youtube";
 
 function RowPost(props) {
   const [movies, setMovie] = useState([]);
-  const [urlId, setUrlId] = useState([]);
+  const [urlId, setUrlId] = useState('');
 
   useEffect(() => {
     axios
@@ -53,7 +53,7 @@ function RowPost(props) {
           />
         ))}
       </div>
-      {urlId && <YouTube opts={opts} videoId={urlId.key} />}
+      { urlId && <YouTube opts={opts} videoId={urlId.key} /> }
     </div>
   );
 }
