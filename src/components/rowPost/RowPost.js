@@ -24,6 +24,10 @@ function RowPost(props) {
     },
   };
 
+  const handleMoveTrailer = (id)=>{
+    console.log(id) 
+    axios.get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-Us`).then((response)=>{console.log(response.data)})
+  }
 
   return (
     <div className="row">
