@@ -27,29 +27,35 @@ function RowPost(props) {
     },
   };
 
-  const handleMoveTrailer = (id) => {
+  const handleMovieTrailer = (id) => {
     console.log(id);
-    axios.get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-Us`).then((response) => {
+    axios
+      .get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-Us`)
+      .then((response) => {
         if (response.data.results.length !== 0) {
           setUrlId(response.data.results[0]);
-        }else{
-          console.log(`Array empty`)
+        } else {
+          console.log(`Array empty`);
         }
       });
-
-    return (
-      <div className="row">
-        <h2>{props.title}</h2>
-        <div className="posters">
-          {movies.map((obj) => (
-            <img
-              onClick={() => handleMoveTrailer(obj.id)} className={props.isSmall ? "small_poster" : "poster"} alt="Poster" src={`${imageUrl + obj.backdrop_path}`} />
-          ))}
-        </div>
-        { urlId && <YouTube opts={opts} videoId={urlId.key} />}
-      </div>
-    );
   };
+
+  return (
+    <div className="row">
+      <h2>{props.title}</h2>
+      <div className="posters">
+        {movies.map((obj) => (
+          <img
+            onClick={() => handleMovieTrailer(obj.id)}
+            className={props.isSmall ? "small_poster" : "poster"}
+            alt="Poster"
+            src={`${imageUrl + obj.backdrop_path}`}
+          />
+        ))}
+      </div>
+      {urlId && <YouTube opts={opts} videoId={urlId.key} />}
+    </div>
+  );
 }
 
 export default RowPost;
